@@ -1,10 +1,10 @@
 const Router = require("express");
 const router = new Router();
-const orderController = require('../controllers/orderController');
+const OrderController = require('../controllers/OrderController');
 const createOrderMiddleware = require("../middleware/createOrderMiddleware");
 
-router.post("/create", createOrderMiddleware, orderController.create);
-router.get("/", orderController.getOrder);
-router.post("/cancel", orderController.cancel)
+router.post("/create", createOrderMiddleware, OrderController.create);
+router.get("/", OrderController.getOrder);
+router.post("/cancel", OrderController.cancel)
 
 module.exports = router;

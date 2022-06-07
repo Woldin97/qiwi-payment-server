@@ -3,7 +3,7 @@ const ApiError = require('../error/ApiError');
 const SECRET_KEY = process.env.SECRET_KEY;
 const qiwiApi = new QiwiBillPaymentsAPI(SECRET_KEY);
 
-class orderController {
+class OrderController {
     async create(req, res, next) {        
         const billId = qiwiApi.generateId();
         const {amount, successUrl, account, email, phone} = req.body;
@@ -55,4 +55,4 @@ class orderController {
     }
 }
 
-module.exports = new orderController();
+module.exports = new OrderController();
